@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { FixedDonationButton } from '@/components/fixed-donation-button'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
@@ -40,33 +40,28 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Calculadora de Cuotas Online Gratis Argentina',
     description: 'Calcula tus cuotas de forma rápida y precisa. Herramienta gratuita para calcular pagos mensuales, intereses y fechas de finalización en Argentina.',
-    url: 'https://info-cuotas.vercel.app',
+    url: 'https://infocuotas.netlify.app', // ← Cambiar aquí
     siteName: 'Info Cuotas',
     images: [
       {
-        url: 'https://info-cuotas.vercel.app/og-image.jpg',
+        url: 'https://infocuotas.netlify.app/og-image.jpg', // ← Cambiar aquí
         width: 1200,
         height: 630,
         alt: 'Calculadora de Cuotas Info Cuotas',
       }
     ],
     locale: 'es_AR',
-    type: 'website',
+    type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Calculadora de Cuotas Online Gratis Argentina',
-    description: 'Calcula tus cuotas de forma rápida y precisa. Herramienta gratuita para Argentina.',
-    images: ['https://info-cuotas.vercel.app/og-image.jpg'],
-  },
-  verification: {
-    google: 'google-site-verification-code',
+    description: 'Calcula tus cuotas de forma rápida y precisa.',
+    images: ['https://infocuotas.netlify.app/og-image.jpg'], // ← Cambiar aquí
   },
   alternates: {
-    canonical: 'https://info-cuotas.vercel.app',
+    canonical: 'https://infocuotas.netlify.app', // ← Cambiar aquí
   },
-  viewport: 'width=device-width, initial-scale=1',
-  category: 'finance',
 }
 
 export default function RootLayout({
@@ -80,7 +75,7 @@ export default function RootLayout({
         <link rel="icon" href="/infoCuotas.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="google-site-verification" content="google-site-verification-code" />
+        <meta name="google-site-verification" content="d126wPhb7ZDioVvxTpqGX5CLUUtWpmtbjyxxtWIN0Po" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -89,7 +84,7 @@ export default function RootLayout({
               '@type': 'WebApplication',
               name: 'Info Cuotas - Calculadora de Cuotas',
               description: 'Calculadora de cuotas online gratuita para Argentina',
-              url: 'https://info-cuotas.vercel.app',
+              url: 'https://infocuotas.netlify.app',
               applicationCategory: 'FinanceApplication',
               operatingSystem: 'Web',
               offers: {
