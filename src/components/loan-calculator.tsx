@@ -11,6 +11,7 @@ export function LoanCalculator() {
   const [principal, setPrincipal] = useState<string>('')
   const [months, setMonths] = useState<string>('')
   const [monthlyRate, setMonthlyRate] = useState<string>('')
+  const [firstPaymentDate, setFirstPaymentDate] = useState<string>('')
   const [result, setResult] = useState<LoanCalculation | null>(null)
   const [error, setError] = useState<string>('')
   const [usedDefaultRate, setUsedDefaultRate] = useState<boolean>(false)
@@ -55,7 +56,10 @@ export function LoanCalculator() {
         setUsedDefaultRate(true)
       }
 
-      const calculation = calculateLoan(p, r, m)
+      // Parse first payment date if provided
+      const firstPayment = firstPaymentDate ? new Date(firstPaymentDate) : undefined
+      
+      const calculation = calculateLoan(p, r, m, firstPayment)
       setResult(calculation)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error en el cálculo')
@@ -78,13 +82,12 @@ export function LoanCalculator() {
           Calculadora de Cuotas
         </CardTitle>
         <CardDescription>
-          {/* Calcula el monto de tus cuotas de forma sencilla y clara */}
-             Calcula tus cuotas de manera sencilla y clara. Obtén información detallada sobre intereses,
-            dinero extra pagado y fecha estimada de finalización.
+          Calcula tus cuotas de manera sencilla y clara. Obtén información detallada sobre intereses,
+          dinero extra pagado y fecha estimada de finalización.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           <div className="space-y-2">
             <label className="text-sm font-medium">Precio del producto *</label>
             <div className="relative">
@@ -104,6 +107,7 @@ export function LoanCalculator() {
               </p>
             )}
           </div>
+          
           <div className="space-y-2">
             <label className="text-sm font-medium">Cantidad de cuotas *</label>
             <Input
@@ -114,6 +118,7 @@ export function LoanCalculator() {
               className="transition-all focus:scale-105"
             />
           </div>
+          
           <div className="space-y-2">
             <label className="text-sm font-medium">Tasa mensual (%)</label>
             <Input
@@ -122,6 +127,16 @@ export function LoanCalculator() {
               step="0.1"
               value={monthlyRate}
               onChange={(e) => setMonthlyRate(e.target.value)}
+              className="transition-all focus:scale-105"
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Fecha de primera cuota (opcional)</label>
+            <Input
+              type="date"
+              value={firstPaymentDate}
+              onChange={(e) => setFirstPaymentDate(e.target.value)}
               className="transition-all focus:scale-105"
             />
           </div>
@@ -206,11 +221,11 @@ export function LoanCalculator() {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg flex items-center gap-2">
                     <Calendar className="w-5 h-5" />
-                    Fecha final
+                    Fecha de finalización
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg font-semibold text-purple-600">
+                  <p className="text-2xl font-bold text-purple-600">
                     {result.finalPaymentDate}
                   </p>
                 </CardContent>

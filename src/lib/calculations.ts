@@ -9,7 +9,8 @@ export interface LoanCalculation {
 export function calculateLoan(
   principal: number,
   monthlyRate: number,
-  months: number
+  months: number,
+  firstPaymentDate?: Date
 ): LoanCalculation {
   if (principal <= 0 || months <= 0) {
     throw new Error("El monto y la cantidad de cuotas deben ser positivos")
@@ -28,8 +29,9 @@ export function calculateLoan(
   const totalInterest = totalAmount - principal
   const interestPercentage = (totalInterest / principal) * 100
 
-  // Calculate final payment date
-  const finalDate = new Date()
+  // Calculate final payment date using first payment date or current date
+  const startDate = firstPaymentDate || new Date()
+  const finalDate = new Date(startDate)
   finalDate.setMonth(finalDate.getMonth() + months)
   const finalPaymentDate = finalDate.toLocaleDateString('es-AR', {
     year: 'numeric',
