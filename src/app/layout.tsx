@@ -10,11 +10,63 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Info Cuotas - Calculadora de Cuotas Inteligente',
-  description: 'Calcula tus cuotas de forma rápida y precisa. Herramienta gratuita para calcular pagos mensuales, intereses y fechas de finalización.',
-  keywords: 'calculadora cuotas, intereses, préstamos, financiación, pagos mensuales',
-  authors: [{ name: 'Info Cuotas' }],
+  title: {
+    default: 'Calculadora de Cuotas Online Gratis Argentina | Info Cuotas',
+    template: '%s | Info Cuotas'
+  },
+  description: 'Calculadora de cuotas online gratuita para Argentina. Calcula pagos mensuales, intereses, costo total y fecha de finalización de tus préstamos. Herramienta 100% gratuita y sin registro.',
+  keywords: [
+    'calculadora cuotas', 'calculadora préstamos', 'simulador cuotas', 'calculadora intereses',
+    'cuota mensual', 'tasa interés', 'prestamos personales', 'financiación', 'crédito',
+    'calculadora cuotas argentina', 'simulador préstamos argentina', 'calcular cuotas online',
+    'calculadora cuotas gratis', 'cuotas sin interés', 'calculadora financiera',
+    'prestamo bancario', 'calculadora cuotas auto', 'calculadora cuotas casa',
+    'cuotas tarjeta credito', 'interes compuesto', 'calculadora deuda'
+  ],
+  authors: [{ name: 'Info Cuotas', url: 'https://info-cuotas.vercel.app' }],
+  creator: 'Info Cuotas',
+  publisher: 'Info Cuotas',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'Calculadora de Cuotas Online Gratis Argentina',
+    description: 'Calcula tus cuotas de forma rápida y precisa. Herramienta gratuita para calcular pagos mensuales, intereses y fechas de finalización en Argentina.',
+    url: 'https://info-cuotas.vercel.app',
+    siteName: 'Info Cuotas',
+    images: [
+      {
+        url: 'https://info-cuotas.vercel.app/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Calculadora de Cuotas Info Cuotas',
+      }
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Calculadora de Cuotas Online Gratis Argentina',
+    description: 'Calcula tus cuotas de forma rápida y precisa. Herramienta gratuita para Argentina.',
+    images: ['https://info-cuotas.vercel.app/og-image.jpg'],
+  },
+  verification: {
+    google: 'google-site-verification-code',
+  },
+  alternates: {
+    canonical: 'https://info-cuotas.vercel.app',
+  },
   viewport: 'width=device-width, initial-scale=1',
+  category: 'finance',
 }
 
 export default function RootLayout({
@@ -26,6 +78,43 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="icon" href="/infoCuotas.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="google-site-verification" content="google-site-verification-code" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'Info Cuotas - Calculadora de Cuotas',
+              description: 'Calculadora de cuotas online gratuita para Argentina',
+              url: 'https://info-cuotas.vercel.app',
+              applicationCategory: 'FinanceApplication',
+              operatingSystem: 'Web',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'ARS'
+              },
+              featureList: [
+                'Cálculo de cuotas mensuales',
+                'Cálculo de intereses totales',
+                'Estimación de fecha de finalización',
+                'Interfaz responsive',
+                'Sin registro requerido'
+              ],
+              availableLanguage: {
+                '@type': 'Language',
+                name: 'Spanish'
+              },
+              areaServed: {
+                '@type': 'Country',
+                name: 'Argentina'
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
