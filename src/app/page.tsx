@@ -86,36 +86,40 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SEO Content Section */}
-        <section className="py-12 bg-white rounded-xl shadow-sm mb-12">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">
+        {/* SEO Content Section - mejorado con estilos de marca */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-2xl shadow-xl mb-12 border border-blue-100">
+          <div className="max-w-4xl mx-auto px-8">
+            <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Calculadora de Cuotas para Argentina
             </h2>
-            <div className="prose prose-gray max-w-none">
-              <p>
+            <div className="prose prose-lg prose-gray max-w-none">
+              <p className="text-lg leading-relaxed text-gray-700 mb-6">
                 Nuestra calculadora de cuotas es la herramienta más precisa y fácil de usar 
                 para calcular pagos mensuales de préstamos en Argentina. Ya sea que estés 
                 planeando comprar un auto, una casa, o necesites un préstamo personal, 
                 nuestra calculadora te ayuda a entender exactamente cuánto pagarás.
               </p>
-              <h3>¿Cómo funciona?</h3>
-              <p>
-                Simplemente ingresa el monto del préstamo, la cantidad de cuotas, 
-                y la tasa de interés mensual. Nuestra calculadora te mostrará:
-              </p>
-              <ul>
-                <li>Cuota mensual exacta</li>
-                <li>Monto total a pagar</li>
-                <li>Intereses totales</li>
-                <li>Fecha estimada de finalización</li>
-              </ul>
-              <h3>Préstamos en Argentina</h3>
-              <p>
-                En Argentina, los préstamos personales suelen tener tasas que varían 
-                entre el 3% y 8% mensual. Nuestra calculadora te permite probar diferentes 
-                escenarios para encontrar la opción que mejor se adapte a tu presupuesto.
-              </p>
+              <div className="bg-blue-50 p-6 rounded-xl my-8 border-l-4 border-blue-500">
+                <h3 className="text-xl font-semibold text-blue-900 mb-3">¿Cómo funciona?</h3>
+                <p className="text-blue-800 mb-4">
+                  Simplemente ingresa el monto del préstamo, la cantidad de cuotas, 
+                  y la tasa de interés mensual. Nuestra calculadora te mostrará:
+                </p>
+                <ul className="space-y-2 text-blue-800">
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Cuota mensual exacta</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Monto total a pagar</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Intereses totales</li>
+                  <li className="flex items-center"><span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Fecha estimada de finalización</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-200">
+                <h3 className="text-xl font-semibold text-indigo-900 mb-3">Préstamos en Argentina</h3>
+                <p className="text-indigo-800">
+                  En Argentina, los préstamos personales suelen tener tasas que varían 
+                  entre el 3% y 8% mensual. Nuestra calculadora te permite probar diferentes 
+                  escenarios para encontrar la opción que mejor se adapte a tu presupuesto.
+                </p>
+              </div>
             </div>
           </div>
         </section>
