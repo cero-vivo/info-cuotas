@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { FixedDonationButton } from '@/components/fixed-donation-button'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased`}>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+          <FixedDonationButton />
           {children}
         </div>
       </body>
