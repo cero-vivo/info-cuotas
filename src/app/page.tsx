@@ -29,22 +29,24 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto">
         {/* Hero Section */}
-        <section className="text-center py-16 animate-in fade-in slide-in-from-bottom duration-700">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            Info Cuotas
-          </h1>
+        <section className="text-center animate-in fade-in slide-in-from-bottom duration-700">
+          <img 
+            src="/infoCuotas.svg" 
+            alt="Info Cuotas Logo" 
+            className="w-48 md:w-48 mx-auto mb-6 animate-pulse-glow"
+          />
         </section>
 
         {/* Calculator Section */}
-          <div className="max-w-4xl mx-auto">
-            <LoanCalculator />
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <LoanCalculator />
+        </div>
 
-          {/* Donation and Ads Section */}
+        {/* Donation and Ads Section */}
         <section className="py-5">
-            <DonationButton />
+          <DonationButton />
         </section>
 
         {/* Benefits Section */}
@@ -63,6 +65,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        
         {/* Footer */}
         <footer className="text-center py-8 border-t">
           <p className="text-gray-600">
