@@ -47,7 +47,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section with SEO optimization */}
         <section className="text-center animate-in fade-in slide-in-from-bottom duration-700">
           <img 
@@ -66,30 +66,30 @@ export default function Home() {
           <DonationButton />
         </div>
 
-        {/* Benefits Section */}
-        <section className="py-12">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+        {/* Benefits Section - Ajustada para márgenes mobile */}
+        <section className="py-12 px-4 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-8 text-gray-900">
             ¿Por qué usar Info Cuotas?
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-in fade-in slide-in-from-bottom duration-700"
+                className="bg-white p-4 sm:p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1 animate-in fade-in slide-in-from-bottom duration-700 mx-0 sm:mx-0"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <benefit.icon className="w-12 h-12 text-blue-600 mb-4" />
-                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
+                <benefit.icon className="w-10 h-10 sm:w-12 sm:h-12 text-blue-600 mb-3 sm:mb-4" />
+                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{benefit.title}</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SEO Content Section - mejorado con estilos de marca */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-2xl shadow-xl mb-12 border border-blue-100">
-          <div className="max-w-4xl mx-auto px-8">
-            <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        {/* SEO Content Section - Padding mobile ajustado */}
+        <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-xl sm:rounded-2xl shadow-xl mb-8 sm:mb-12 border border-blue-100">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Calculadora de Cuotas para Argentina
             </h2>
             <div className="prose prose-lg prose-gray max-w-none">
