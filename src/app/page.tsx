@@ -1,6 +1,7 @@
 import { LoanCalculator } from '@/components/loan-calculator'
 import { AdvertisingSpace } from '@/components/advertising-space'
 import { Calculator, TrendingUp, Shield, Heart, CreditCard, Home as HomeIcon, Car } from 'lucide-react'
+import { DonationButton } from '@/components/donation-button'
 
 export default function Home() {
   const benefits = [
@@ -60,6 +61,10 @@ export default function Home() {
         <div className="max-w-4xl mx-auto mb-12">
           <LoanCalculator />
         </div>
+        {/* Donation Section */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <DonationButton />
+        </div>
 
         {/* Benefits Section */}
         <section className="py-12">
@@ -114,7 +119,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
         {/* Footer */}
         <footer className="text-center py-8 border-t">
           <p className="text-gray-600">
